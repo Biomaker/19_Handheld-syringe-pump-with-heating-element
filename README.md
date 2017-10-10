@@ -9,6 +9,8 @@ The mechanics for withdrawing and infusing the syringe rely on the following ope
 
 The heating element comprises of a temperature sensor and a kapton heating element. The power send to the heating element can be controlled using the analog output of the Arduino and a transistor (TIP 120).
 
+![Schematic](https://user-images.githubusercontent.com/29552824/31382056-5741fe64-adae-11e7-9270-631f6edaf11e.png)
+
 The following hardware is used in our setup:
 
 | **Item**                                                                                    | **Supplier**  | **Catalogue Number** | **Price in £ (Oct. 2017)** |
