@@ -9,6 +9,8 @@ The mechanics for withdrawing and infusing the syringe rely on the following ope
 
 The heating element comprises of a temperature sensor (TMP36, connected to 5V, GROUND and Analog In 0 on the Arduino) and a 12 V kapton heating element. The power send to the heating element can be controlled using the analog output 5 of the Arduino and a transistor (TIP 120), which opens the channel between Collector and Emittor when the analog output of the Arduino is HIGH. A resistor is inserted between the Arduino and the Base of the transistor to protect it from too high currents. Due to the PWM nature of the analog output of the Arduino, the transistor rapidly switches between ON and OFF states thus effectively creating analog states from 0 (0% heating power) to 255 (100% heating power).
 
+The 12V bipolar stepper motor for controlling the liquid flow is driven by the Big Easy Driver (http://www.schmalzhaus.com/BigEasyDriver/) and controlled via the digital outputs 2 (connected to STEP) and 3 (connected to DIRection) of the Arduino. 
+
 ![Schematic](https://user-images.githubusercontent.com/29552824/31382056-5741fe64-adae-11e7-9270-631f6edaf11e.png)
 
 The following hardware is used in our setup:
