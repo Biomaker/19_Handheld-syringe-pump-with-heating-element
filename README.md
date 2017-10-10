@@ -11,7 +11,7 @@ The heating element comprises of a temperature sensor (TMP36, connected to 5V, G
 
 The 12V bipolar stepper motor for controlling the liquid flow is driven by the Big Easy Driver (http://www.schmalzhaus.com/BigEasyDriver/) and controlled via the digital outputs 2 (connected to STEP) and 3 (connected to DIRection) of the Arduino. 
 
-![Schematic](https://user-images.githubusercontent.com/29552824/31382056-5741fe64-adae-11e7-9270-631f6edaf11e.png)
+![Schematic](https://user-images.githubusercontent.com/29552824/31384302-4f25e0ee-adb6-11e7-8523-fa146c40c84b.png)
 
 The following hardware is used in our setup:
 
