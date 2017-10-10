@@ -7,7 +7,7 @@ We are constructing a handheld syringe pump with an included heating element for
 The device is powered by a 12 V power supply. All the components which draw a lot of power (i.e., the Arduino, the stepper motor and the heating element) were chosen so that they can work with that exact voltage. The power supply simply has to be powerful enough to handle the current, so we chose a 60W power supply which should be easily enough.
 The mechanics for withdrawing and infusing the syringe rely on the following open-source project: http://www.appropedia.org/Open-source_syringe_pump. One can download the parts for printing here: https://www.youmagine.com/designs/syringe-pump.
 
-The heating element comprises of a temperature sensor and a kapton heating element. The power send to the heating element can be controlled using the analog output of the Arduino and a transistor (TIP 120).
+The heating element comprises of a temperature sensor and a 12 V kapton heating element. The power send to the heating element can be controlled using the analog output of the Arduino and a transistor (TIP 120), which opens when the analog output of the Arduino is HIGH. Due to the PWM nature of the analog output of the Arduino, the transistor rapidly switches between ON and OFF states thus effectively creating analog states from 0 (0% heating power) to 255 (100% heating power).
 
 ![Schematic](https://user-images.githubusercontent.com/29552824/31382056-5741fe64-adae-11e7-9270-631f6edaf11e.png)
 
