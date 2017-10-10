@@ -30,9 +30,11 @@ The following hardware is used in our setup:
 # Code documentation
 
 ## 4D touchpad
-The code used to interact with the touchscreen is programmed with Workshop using Visi Genie (http://www.4dsystems.com.au/product/4D_Workshop_4_IDE/).
+The code used to interact with the touchscreen is programmed with Workshop using Visi Genie (http://www.4dsystems.com.au/product/4D_Workshop_4_IDE/). The main file "syringepump.4DGenie" and the supplementary files containing images and the keyboard layouts in the folder "syringepump.ImgData" are uploaded to the 4D touchscreen.
 
 ## Arduino
+
+The code in "SyringePump.ino" is uploaded to the Arduino.
 
 ### Interaction with 4D Systems touchpad
 The ViSi-Genie-Arduino Library is necessary to send information via a serial port (souch as flow rate, the set point for the temperature, the current temperature, etc.) between the Arduino and the 4D touchpad, see https://github.com/4dsystems/ViSi-Genie-Arduino-Library.
