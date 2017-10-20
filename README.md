@@ -56,4 +56,4 @@ The setting of the rotational speed of the stepper motor is done by implementing
 
 rotational speed = flow rate / (60 · 3.14159 · diameter · diameter · 0.001/4 · 0.8) · 3200.
 
-The factor of 3200=200·16 is needed, since the used stepper motor needs 200 steps for a full rotation, and the Big Easy driver uses a 16 microstepping mode in the standard configuration. The factor 0.8 mm is the slope of the M5 threaded rod. For withdrawing the syringe, the rotational speed is multiplied by -1, inverting the rotational direction of the stepper motor.
+The factor of 3200=200 · 16 is needed, since the used stepper motor needs 200 steps for a full rotation, and the Big Easy driver uses a 16 microstepping mode in the standard configuration. The factor 0.8 mm is the slope of the M5 threaded rod. For withdrawing the syringe, the rotational speed is multiplied by -1, inverting the rotational direction of the stepper motor.
