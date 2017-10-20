@@ -47,6 +47,6 @@ The temperature control uses a PID algorithm (https://en.wikipedia.org/wiki/PID_
 ### Stepper motor control
 The setting of the rotational speed of the stepper motor is done by implementing the AccelStepper library (https://github.com/waspinator/AccelStepper). The stepper motor rotational speed (in motor steps per second) per is calculated from the parameters flow rate (in ml/min) and syringe diameter (in mm) using the formula 
 
-speedvalue = FlowValue / (60 · 3.14159 · diameter · diameter · 0.001/ 4 · 0.8) · 3200.
+rotational speed = flow rate / (60 · 3.14159 · diameter · diameter · 0.001/4 · 0.8) · 3200.
 
-The factor of 3200=200·16 is needed, since the used stepper motor needs 200 steps for a full rotation, and the Big Easy driver uses a 16 microstepping mode in the standard configuration. 
+The factor of 3200=200·16 is needed, since the used stepper motor needs 200 steps for a full rotation, and the Big Easy driver uses a 16 microstepping mode in the standard configuration. The factor 0.8 mm is the slope of the M5 threaded rod.
