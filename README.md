@@ -34,6 +34,11 @@ The following hardware is used in our setup:
 ## 4D touchpad
 The code used to interact with the touchscreen is programmed with Workshop using Visi Genie (http://www.4dsystems.com.au/product/4D_Workshop_4_IDE/). The main file "syringepump.4DGenie" and the supplementary files containing images and the keyboard layouts in the folder "syringepump.ImgData" are uploaded to the 4D touchscreen.
 
+The program allows for setting the following parameters:
+Temperature set point, Heater ON/OFF, flow rate (in ml/min), choice of syringe (1, 3, 5, 10, 20, 30 ml BD Plastipak), motor rotation ON/OFF, withdrawal/infusion mode.
+
+The screen displays the current temperature, also in a plot over time, the flow rate, the choice of syringe, and the motor status.
+
 ## Arduino
 
 The code in "SyringePump.ino" is uploaded to the Arduino.
@@ -45,8 +50,8 @@ The ViSi-Genie-Arduino Library is necessary to send information via a serial por
 The temperature control uses a PID algorithm (https://en.wikipedia.org/wiki/PID_controller), which has been implemented in this library: https://github.com/br3ttb/Arduino-PID-Library/. The temperature data from the thermocouple is used as the input for the algorithm, and the PID output is sent to the analog output PIN as a PWM wave. In this way the power to the heating element can be controlled from 0 to 100% in 255 steps.
 
 ### Stepper motor control
-The setting of the rotational speed of the stepper motor is done by implementing the AccelStepper library (https://github.com/waspinator/AccelStepper). The stepper motor rotational speed (in motor steps per second) per is calculated from the parameters flow rate (in ml/min) and syringe diameter (in mm) using the formula 
+The setting of the rotational speed of the stepper motor is done by implementing the AccelStepper library (https://github.com/waspinator/AccelStepper). The stepper motor rotational speed (in motor steps per second) is calculated from the parameters flow rate (in ml/min) and syringe diameter (in mm) using the formula 
 
 rotational speed = flow rate / (60 · 3.14159 · diameter · diameter · 0.001/4 · 0.8) · 3200.
 
-The factor of 3200=200·16 is needed, since the used stepper motor needs 200 steps for a full rotation, and the Big Easy driver uses a 16 microstepping mode in the standard configuration. The factor 0.8 mm is the slope of the M5 threaded rod.
+The factor of 3200=200·16 is needed, since the used stepper motor needs 200 steps for a full rotation, and the Big Easy driver uses a 16 microstepping mode in the standard configuration. The factor 0.8 mm is the slope of the M5 threaded rod. For withdrawing the syringe, the rotational speed is multiplied by -1, inverting the rotational direction of the stepper motor.
