@@ -1,4 +1,4 @@
-﻿Version     0.0
+Version     0.0
 Platform    Gen4-uLCD-32DT-LR
 PlatRes     240x320
 Depends
@@ -204,7 +204,7 @@ LedDigits
     Name                         Leddigits1
     Alias                        Leddigits1
     Color                        BLACK
-    Decimals                     1
+    Decimals                     2
     Digits                       4
     Height                       35
     LeadingZero                  Yes
@@ -224,7 +224,7 @@ StaticText
     Alias                        Statictext4
     Alignment                    Center
     AutoSize                     Yes
-    Caption                      'Flow Rate (ul/min)'
+    Caption                      'Flow Rate (ml/min)'
     Color                        BLACK
     Font.Color                   WHITE
     Font.Effects                 []
@@ -686,7 +686,7 @@ StaticText
     Alias                        Statictext1
     Alignment                    Center
     AutoSize                     Yes
-    Caption                      'Enter flow rate'
+    Caption                      'Enter flow rate (ml/min)'
     Color                        BLACK
     Font.Color                   WHITE
     Font.Effects                 []
