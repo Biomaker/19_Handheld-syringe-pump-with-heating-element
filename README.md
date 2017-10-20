@@ -48,8 +48,8 @@ The code in "SyringePump.ino" is uploaded to the Arduino.
 ### Interaction with 4D Systems touchpad
 The ViSi-Genie-Arduino Library is necessary to send information via a serial port (souch as flow rate, the set point for the temperature, the current temperature, etc.) between the Arduino and the 4D touchpad, see https://github.com/4dsystems/ViSi-Genie-Arduino-Library.
 
-### PID controller
-The temperature control uses a PID algorithm (https://en.wikipedia.org/wiki/PID_controller), which has been implemented in this library: https://github.com/br3ttb/Arduino-PID-Library/. The temperature data from the thermocouple is used as the input for the algorithm, and the PID output is sent to the analog output PIN as a PWM wave. In this way the power to the heating element can be controlled from 0 to 100% in 255 steps.
+### PID heating controller
+The data between the thermocouple amplifier is sent using hardware SPI (quicker than software SPI, and frees up resources on the Arduino compared to software SPI), so the library SPI.h (standard in Arduino IDE) is used. The library Adafruit_MAX31855 (https://github.com/adafruit/Adafruit-MAX31855-library) is used to simplify reading temperature values from the thermocouple. The temperature control uses a PID algorithm (https://en.wikipedia.org/wiki/PID_controller), which has been implemented in this library: https://github.com/br3ttb/Arduino-PID-Library/. The temperature data from the thermocouple is used as the input for the algorithm, and the PID output is sent to the analog output PIN as a PWM wave, updated once every second. In this way the power to the heating element can be controlled from 0 to 100% in 255 steps.
 
 ### Stepper motor control
 The setting of the rotational speed of the stepper motor is done by implementing the AccelStepper library (https://github.com/waspinator/AccelStepper). The stepper motor rotational speed (in motor steps per second) is calculated from the parameters flow rate (in ml/min) and syringe diameter (in mm) using the formula 
